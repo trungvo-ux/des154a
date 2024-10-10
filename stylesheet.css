@@ -3,7 +3,6 @@ body {
     text-align: center;
     background-color: rgb(243, 243, 243);
     font-family: "Pixelify Sans", sans-serif;
-    background-image: url("megaman.png");
 
 }
 
@@ -98,6 +97,7 @@ html {
     left: 20px;
     height: auto;
     width: 200px;
+    animation: jump .5s infinite;
 }
 
 .fire-bead {
@@ -121,6 +121,18 @@ html {
         transform: translateX(1200px);
         opacity: 1;
     }
+}
+
+@keyframes jump {
+0% {
+    transform: translateY(0); /* Start at original position */
+  }
+  50% {
+    transform: translateY(-4px); /* Move up 20px */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
 }
 
 .banner:hover .fire-bead {
