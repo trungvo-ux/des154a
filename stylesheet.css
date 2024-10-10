@@ -3,6 +3,8 @@ body {
     text-align: center;
     background-color: rgb(243, 243, 243);
     font-family: "Pixelify Sans", sans-serif;
+    background-image: url("megaman.png");
+
 }
 
 h1, h2, h3, h4 {
