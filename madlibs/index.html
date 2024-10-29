@@ -6,6 +6,7 @@
     <title>Journal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="stylesheet.css" rel="stylesheet">
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -28,21 +29,29 @@
         </div>
         <div class="title">
             <h1>Input the desire words </h1>
-        </div class="stack">
-        <div>
-        <input placeholder="verb" id="word">
-        <br>
-        <input placeholder="noun" id="word">
-        <br>
-        <input placeholder="adverb" id="word">
-        <br>
-        <input placeholder="noun" id="word">
-        <br>
-        <button>Submit</button>
         </div>
-        
+        <form id="myform">
+        <input type ="verb1" placeholder=verb id="verb1">
+        <br>
+        <input type="noun1" placeholder="noun" id="noun1">
+        <br>
+        <input type= "adverb1" placeholder="adverb" id="adverb1">
+        <br>
+        <input type= "noun2" placeholder="noun" id="noun2">
+        <br>
+        <input type= "adj1" placeholder="adjective" id="adj1">
+        <br>
+        <input type="submit" value="Send">
+        </div>
+                
     </article>
-    <div class="container">
+
+    <div id="overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <p id="madlib"></p>
+            <button id="close-overlay">Close</button>
+        </div>
+    </div>
 
     </div>
 </body>
