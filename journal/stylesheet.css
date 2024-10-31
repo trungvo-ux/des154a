@@ -31,7 +31,7 @@ p3{
 article{
     width: 50vw;
     margin: auto;
-    height: 100vh;
+    height: fit-content;
     background-color: white;
     border-color: black;
     border: solid 10px black;
@@ -57,4 +57,8 @@ article{
     height: fit-content;
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 50;
+}
+
+img .dog{
+    width: fit-content;
 }
