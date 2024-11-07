@@ -1,0 +1,90 @@
+body{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    background-image: url("wallpaper.webp");
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    
+}
+
+
+h1{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+p{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+p2{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 50;
+}
+
+p3{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 50;
+}
+
+.screen{
+    flex: 1;  
+    width: 100vw;
+    height: 83vh;
+}
+
+
+
+.banner{
+    padding: 5px;
+    background-color: white;
+    width: 50vw;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    
+}
+
+.icon{
+    gap: 4px;
+    width: 60px;
+    height: 100px;
+
+}
+
+footer {
+    color: white;
+    background-color: blue;
+    height: 60px;
+    text-align: center;
+    align-items: left;
+}
+
+.start{
+   height: auto;
+   width: fit-content;
+    background-color: green;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+#datetime {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
