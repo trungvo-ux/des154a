@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        #message {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message"></div>
+
+<script>
+
+    let name = prompt("What's your name?");
+    let color = prompt("What's your favorite color?");
+
+    function displayGreeting(name, color) {
+        document.getElementById("message").innerText = `Hello, ${name}! Welcome to our page.`;
+        document.body.style.backgroundColor = color;
+    }
+    displayGreeting(name, color);
+</script>
+
+</body>
+</html>
