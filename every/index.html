@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="custom-cursor"></div>
+    <div class="screen">
+        <div class="holders">
+            <div class="icon" onclick="showOverlay('overlay1')">
+                <img src="dog.jpeg" alt="doge" width="30px" height="auto">
+                <div class="small-text">doge</div>
+            </div>
+            <div class="icon" onclick="showOverlay('overlay2')">
+                <img src="building1.jpeg" alt="deathstar" width="30px" height="auto">
+                <div class="small-text">building</div>
+            </div>
+            <div class="icon" onclick="showOverlay('overlay3')">
+                <img src="building2.jpeg" alt="mondavi" width="30px" height="auto">
+                <div class="small-text">mondavi</div>
+            </div>
+            <div class="icon" onclick="showOverlay('overlay4')">
+                <img src="hawaii.jpeg" alt="hawaii" width="30px" height="auto">
+                <div class="small-text">hawaii</div>
+            </div>
+            <div class="icon" onclick="showOverlay('overlay5')">
+                <img src="tower.jpeg" alt="tower" width="30px" height="auto">
+                <div class="small-text">Tower</div>
+            </div>
+            <div class="icon">
+                <img src="trash.webp" alt="trash" width="30px" height="auto">
+                <div class="small-text">trash</div>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="overlay-content">
+                <div class="tab">
+                    <div class="tabs">
+                        <div class="box">_</div>
+                        <div class="box">▣</div>
+                        <button>X</button>
+                    </div>
+                </div>
+                <div class="dual">
+                    <div class="paragraph">
+                        <p>What's on Trung's PC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Individual Overlays -->
+    <div class="overlay" id="overlay1">
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="small-text">doge.jpeg</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay1')">X</button>
+                </div>
+            </div>
+            <div class="dual">
+                <img src="dog.jpeg" alt="dog" width="300px" height="auto">
+                <div class="paragraph">
+                    <div class="small-text">Meet Nimbus, he's my family dog!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay2">
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="small-text">building.jpeg</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay2')">X</button>
+                </div>
+            </div>
+            <div class="dual">
+                <img src="building1.jpeg" alt="deathstar" width="300px" height="auto">
+                <div class="paragraph">
+                    <div class="small-text">I took this photo during the winter of 2024 at the Deathstar!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="overlay" id="overlay3">
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="small-text">mondavi.jpeg</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay3')">X</button>
+                </div>
+            </div>
+            <div class="dual">
+                <img src="building2.jpeg" alt="building" width="300px" height="auto">
+                <div class="paragraph">
+                    <div class="small-text">When I first came to davis... I was on tour and visited the mondavi center. I took this photograph at a certain degree to capture the geometric look</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay4">
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="small-text">hawaii.jpeg</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay4')">X</button>
+                </div>
+            </div>
+            <div class="dual">
+                <img src="hawaii.jpeg" alt="hawaii" width="300px" height="auto">
+                <div class="paragraph">
+                    <div class="small-text">I took this photo during the winter of 2024 in Hawaii!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay5">
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="small-text">tower.jpeg</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay5')">X</button>
+                </div>
+            </div>
+            <div class="dual">
+                <img src="tower.jpeg" alt="tower" width="300px" height="auto">
+                <div class="paragraph">
+                    <div class="small-text">This tower, located in Sin City (Las Vegas), I was swimming and captured this worm's eye view picture</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="task">
+            <div class="start">
+                <img src="windowslogof.png" alt="windows logo" width="25px" height="auto">
+                <div class="small-text">Start</div>
+            </div>
+            <div class="app">
+                <img src="internet.webp" alt="internet explorer" width="20" height="auto">
+                <div class="small-text">Internet Explorer</div>
+            </div>
+        </div>
+        <p id="datetime"></p>
+    </footer>
+
+    <script>
+        window.onload = function () {
+            function updateTime() {
+                var now = new Date();
+                var hours = now.getHours().toString().padStart(2, '0');
+                var minutes = now.getMinutes().toString().padStart(2, '0');
+                var seconds = now.getSeconds().toString().padStart(2, '0');
+                var time = `${hours}:${minutes}:${seconds}`;
+                document.getElementById("datetime").innerHTML = time;
+            }
+
+            updateTime(); // Initialize the time immediately
+            setInterval(updateTime, 1000); // Update the time every second
+        };
+
+        function showOverlay(overlayId) {
+            document.getElementById(overlayId).style.visibility = "visible";
+        }
+
+        function hideOverlay(overlayId) {
+            document.getElementById(overlayId).style.visibility = "hidden";
+        }
+    </script>
+</body>
+
+</html>

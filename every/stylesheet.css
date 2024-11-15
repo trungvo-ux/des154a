@@ -1,0 +1,221 @@
+body {
+    text-align: center;
+    background-image: url("wallpaper.webp");
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    cursor: url('cursor.png'), auto;
+
+}
+
+.custom-cursor {
+    cursor: url('cursor.png'), auto;
+}
+
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.small-text {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.screen {
+    flex: 1;
+    width: 100vw;
+    height: 83vh;
+}
+
+.banner {
+    padding: 20px; /* Set padding value */
+    position:absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.icon {
+    gap: 4px;
+    width: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.icon:hover{
+    transition: 2s;
+    background-color: rgba(0, 0, 0, 0.124);
+}
+
+.holders{
+    padding: 20px;
+}
+
+footer {
+    color: white;
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 50px;
+    box-shadow: inset -15px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+}
+.start {
+    position: relative;
+    width: 120px;
+    background: linear-gradient(90deg, #45A344 0%, #2C7E2C 100%);
+    color: white;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid #1E4E8C;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.309);
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+.start img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(2px 2x 2px #2222220a);
+  }
+
+.task{
+    display: flex;
+}
+
+.app{
+    position: relative;
+    width: 200px;
+    background: linear-gradient(90deg, #3980F4 0%, #3980F4 100%);
+    color: white;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid #1E4E8C;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.309);
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5);
+
+
+}
+
+
+
+#datetime {
+    position: absolute;
+    right: 0%;
+    color: white;
+    font-size: 14px;
+    background: #0C90EB;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay-content {
+    background: rgb(24,139,255);
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    text-align: center;
+    max-height: 80vh;
+    width: auto;
+    padding: 5px;
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+
+}
+
+.tab {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+
+.tab button {
+    width: 34px;
+    height: 34px;
+    background-color: red;
+    border: white solid 2px;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Valid font-weight */
+    text-align: center;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.tab .box {
+    width: 30px;
+    height: 30px;
+    border: white solid 2px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Valid font-weight */
+    text-align: center;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 2px;
+}
+
+.dual{
+    display: flex;
+}
+
+.paragraph{
+    width: 300px;
+    background-color: white;
+}
