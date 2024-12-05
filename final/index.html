@@ -1,28 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="stylesheet.css" rel="stylesheet">
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Game On</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
 
-    <h1>Design Brief Project: Reinvent Windows XP</h1>
-    <div class="parent">
-    <div class="desc">
-    <p> For my Windows XP class project, I designed high-resolution comps in Figma, reimagining the interface with a modern aesthetic while preserving its nostalgic charm. All graphics were created from scratch, meeting originality requirements. Components include a taskbar, start menu, system tray, desktop icons, window frames, and buttons, enhanced with updated gradients, shadows, and textures.</p>
-    <br>
-    <p> To really immerse my audience to feel like their in an actual windows xp desktop is by adding a BSOD and refine my UI Components</p>
-    <img src="BSOD.png" width="auto" height="340">
-    <img src="UI.jpg" width="auto" height="400">
-    <p> I started to mark out which UI components I should make for my reiteration.</p>
-</div>
+    <!-- Screen with Icons -->
+    <div class="screen">
+        <div class="holders">
+            <!-- Internet Explorer Icon -->
+            <div class="icon" onclick="showOverlay('overlay1')">
+                <img src="internet.webp" alt="Internet Explorer" width="30px" height="auto">
+                <div class="small-text">Internet Explorer</div>
+            </div>
+
+            <!-- Trash Icon -->
+            <div class="icon">
+                <img src="trash.webp" alt="Trash" width="30px" height="auto">
+                <div class="small-text">Trash</div>
+            </div>
+
+            <!-- BSOD Icon -->
+            <div class="icon" onclick="showLargeImageAndBSOD()">
+                <img src="CSICON.png" alt="BSOD" width="30px" height="auto">
+                <div class="small-text">CS 1.6</div>
+            </div>
+        </div>
     </div>
 
+    <!-- Start Menu Overlay -->
+    <div class="start-menu-overlay" id="start-menu">
+        <div class="start-menu">
+            <div class="menu-header">
+                <img src="TrungVo.jpg" alt="User" width="50px" height="auto">
+                <p class="small-text">Trung Vo</p>
+            </div>
+            <div class="menu-content">
+                <div class="menu-item" onclick="showOverlay('overlay1')">
+                    <img src="internet.webp" alt="Internet Explorer" width="35px" height="auto">
+                    <div class="slant-menu">
+                        <p class="small-text">Internet Explorer</p>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showLargeImageAndBSOD()">
+                    <img src="CSICON.png" alt="E-mail" width="35px" height="auto">
+                    <div class="slant-menu">
+                    <p class="small-text">Counter Strike 1.6</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-footer">
+                <div class="slant">
+                    <button id="logOffButton">
+                        <img src="key.png" alt="key" width="30px" height="auto">
+                    </button>
+                    <p class="small-text">Log Off</p>
+                </div>
+                <div class="slant">
+                    <button>
+                        <img src="shutdown.avif" alt="key" width="26px" height="auto">
+
+                    </button>
+                    <p class="small-text">Turn off computer</p>
+                </div>
+            </div>
+        </div>
     </div>
+    
+
+    <!-- Overlay for Game -->
+    <div class="overlay" id="overlay1">
+        <div class="app-game">
+            <img src="internet.webp" alt="Internet Explorer" width="20" height="auto">
+            <div class="small-text">Internet</div>
+        </div>
+        <div class="overlay-content">
+            <div class="tab">
+                <div class="tab-internet">
+                <div class="small-text">Internet</div>
+                <div class="tabs">
+                    <div class="box">_</div>
+                    <div class="box">▣</div>
+                    <button onclick="hideOverlay('overlay1')">X</button>
+                </div>
+            </div>
+                <div class="search">
+                    <div class="task-search">
+                    <div class="button-search"><img src="button-back.webp" width="30px" height="auto">
+                    </div>
+                    <div class="button-search"> <img src="button-back 2.png" width="30px" height="auto" ></div>
+                    <input placeholder="www.google.com">
+                 </div>
+
+
+                </div>
+            </div>
+            </div>
+            <div class="dual">
+            <iframe src="https://web.archive.org/web/19990208004515/http://google.com/" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>       
+        </div>
+        </div>
+    </div>
+
+    <!-- Large Image Overlay -->
+    <div class="overlay4" id="largeImageOverlay" style="display: none;">
+
+            <img src="CS 1.6" alt="Large Image" style="max-width: 100%; max-height: 100%;">
+        </div>
+    </div>
+
+    <!-- BSOD Overlay -->
+    <div class="bsod-overlay" id="bsod" style="display: none;">
+        <div class="bsod-content">
+            <h1> Your PC ran into a problem</h1>
+            <p>
+                We're just collecting some error info, and then we'll restart for you.
+            </p>
+            <p>
+                <span>For more information, you can search online for this error: </span>
+                <code class="small-text" >CRITICAL_PROCESS_DIED</code>
+
+            </p>
+            <p>0% complete</p>
+            <button onclick="hideBSOD()">
+                <div class="small-text">Restart</div>
+            </button>
+        </div>
+    </div>
+
+    <div id="logOffOverlay" style="display: none;" class="overlay">
+        <div class="overlay-content-2">
+            <div class="slant-windows">
+            <p>Log Off Windows</p>
+            <img src="windowslogof.png" width="40px" height="auto">
+             </div>
+             
+             <div class="center-windows">
+            <div class="slant-button">
+                
+                <button>
+                    <img src="switch.avif" alt="key" width="35px" height="auto">
+
+                </button>
+                <p class="small-text">Switch</p>
+            </div>
+            <div class="slant-button">
+            <button id="confirmLogOff">
+                <img src="key.png" alt="key" width="35px" height="auto">
+
+            </button>
+            <p class="small-text">Log Off</p>
+        </div>
+            </div>
+            <div class="slant-box">
+            <button id="cancelLogOff">Cancel</button>
+        </div>
+        </div>
+    </div>
+
+    <div id="logOffScreen" style="display: none;" class="overlay-3">
+        <div class="logoff-content">
+            <div class="logo">
+                <img src="windows-large.png" alt="Windows XP Logo">
+            </div>
+            <p class="message">Logging off...</p>
+        </div>
+    </div>
+    
+    
+
+    <!-- Footer / Taskbar -->
+    <footer>
+        <div class="task">
+            <div class="start" onclick="toggleStartMenu()">
+                    <img src="windowslogof.png" alt="Windows Logo" width="25px" height="auto">
+                    <div class="small-text">Start</div>
+                </div>
+            </div>
+            <div class="app">
+                <img src="internet.webp" alt="Internet Explorer" width="20" height="auto">
+                <div class="small-text">Internet Explorer</div>
+            </div>
+        </div>
+        <p id="datetime"></p>
+    </footer>
+
 </body>
+
 </html>

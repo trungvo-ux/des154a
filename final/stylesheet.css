@@ -1,29 +1,596 @@
-body{
-    margin: 100px;
-}
-
-h1{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
     text-align: center;
+    background-image: url("wallpaper.webp");
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    cursor: url('cursor.png'), auto;
+    font-family: "Pixelify Sans", sans-serif;
+
+
 }
 
-p{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
+.custom-cursor {
+    cursor: url('cursor.png'), auto;
 }
 
-.desc{
+.start-menu-overlay {
+    display: none;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 400px;
+    background-color: #c6d8f1;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    height: 500px;
+
+}
+
+.menu-header img{
+    border: solid white 1px;
+}
+
+.start-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: rgb(24,139,255);
+    padding: 5px;
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    color: white;
+
+}
+
+
+.slant{
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+
+.overlay4 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Covers the entire screen */
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    z-index: 9999; /* Ensure it appears above other content */
+    justify-content: center; /* Center child content horizontally */
+    align-items: center; /* Center child content vertically */
+    animation: fadeIn 0.5s ease-in; /* Apply fade-in animation */
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start with 0 opacity */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+    }
+}
+.overlay-content-2{
+    background-color: #0000aa;
+    border: black solid 1px;
+    width: 400px;
+
+}
+
+.slant-button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slant-windows{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+
+.center-windows{
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
     padding: 20px;
-    border-radius: 12px;
-    background-color: rgb(242, 242, 242);
+    height: 100px;
+    align-items: center;
+    display: flex;
+    box-shadow: inset -5px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+    justify-content: space-around;
+    color: white;
+}
+
+.center-windows button{
+    border: none;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 4px;
+}
+
+/* BSOD Overlay */
+.bsod-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000aa; /* Classic blue */
+    color: white;
+    font-family: 'Consolas', 'Courier New', monospace;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Overlay container */
+.overlay-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(81,58,241);
+    background: linear-gradient(22deg, rgba(81,58,241,1) 0%, rgba(0,53,136,1) 47%, rgba(0,64,153,1) 100%);    z-index: 1000;
+}
+
+/* Content within the overlay */
+.logoff-content {
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Ensures content is stacked vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center;
+    background-color: rgba(91, 126, 220, 1); /* Updated to proper RGBA syntax */
+    width: 100vw;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.slant-menu{
+    text-align: left;
+
+}
+
+/* Logo image */
+.logo img {
+    width: 150px; /* Adjust the width to match the design */
+}
+
+/* Logging off text */
+.message {
+    font-size: 24px;
+    color: white;
+    margin-top: 20px;
+}
+
+.bsod-content {
+   text-align: center;
+}
+
+.bsod-content, button{
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+.bsod-content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.bsod-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.bsod-content code {
+    background: #ffffff;
+    color: #0000aa;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.bsod-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0000aa;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.bsod-content button:hover {
+    background-color: #ccc;
+    color: #000066;
+}
+
+.slant-2{
+    text-align: left;
+}
+.menu-content .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu-content .menu-item:hover {
+    background-color: #dae4f2;
+}
+
+
+.menu-footer {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 20px; /* Add spacing between buttons */
+    padding: 10px; /* Adjust padding for better spacing */
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    position: absolute; /* Position at the bottom of the container */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Stretch to match the width of the parent */
+    box-sizing: border-box; /* Include padding in width */
+}
+.menu-footer button{
+    border: white solid 1px;
+    border-radius: 4px;
+    padding: 0px;
+    height: 30px;
+    overflow: hidden;
+    width: 30px;
+    background: rgb(24,139,255);
+    background: linear-gradient(90deg, rgb(239, 191, 33) 0%, #d9ae22 100%);
+    box-shadow: inset -5px 5px 5px rgba(255, 255, 255, 0.5),
+
+}
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.small-text {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.screen {
+    flex: 1;
+    width: 100vw;
+    height: 83vh;
+}
+
+.banner {
+    padding: 20px; /* Set padding value */
+    position:absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.icon {
+    gap: 4px;
+    width: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.icon:hover{
+    transition: 2s;
+    background-color: rgba(0, 0, 0, 0.124);
+}
+
+.holders{
+    padding: 20px;
+}
+
+footer {
+    color: white;
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 50px;
+    box-shadow: inset -15px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+}
+.start {
+    position: relative;
+    width: 120px;
+    background: linear-gradient(90deg, #45A344 0%, #2C7E2C 100%);
+    color: white;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid #1E4E8C;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.309);
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+.start img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(2px 2x 2px #2222220a);
+  }
+
+.task{
+    display: flex;
+}
+
+.app{
+    position: relative;
+    width: 200px;
+    background: linear-gradient(90deg, #3980F4 0%, #3980F4 100%);
+    color: white;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid #1E4E8C;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.309);
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5);
 
 
 }
 
-.parent {
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default body margin */
-    margin-top: 20px;
+.task-search{
+    gap: 5px;
+}
+
+.slant-box{
+    padding: 25px;
+    display: flex; /* Enables flexbox *//* Ensures content is stacked vertically */
+    align-items: right; /* Centers content horizontally */
+    justify-content: right; 
+}
+
+.slant-box button{
+    border: none;
+    padding: 10px 20px 10px 20px
+}
+
+.slant-box button :hover{
+    color: #c6d8f1;
+    transition: .1s;
+}
+.app-game{
+    position:fixed;
+    bottom: -0px;
+    width: 200px;
+    background: linear-gradient(90deg, #3980F4 0%, #3980F4 100%);
+    color: white;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid #1E4E8C;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.309);
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5);
+
+
+}
+
+
+
+
+
+#datetime {
+    position: absolute;
+    right: 0%;
+    color: white;
+    font-size: 14px;
+    background: #0C90EB;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+
+
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 94.5vh;
+    display: none; /* Change visibility to display */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay-content {
+    background: rgb(24,139,255);
+    background: linear-gradient(90deg, rgb(59, 119, 210) 0%, #225AD9 100%);
+    text-align: center;
+    max-height: 80vh;
+    width: auto;
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.search{
+    background-color: white;
+    padding: 4px 8px 8px 4px;
+    gap: 4px;
+}
+
+.search input{
+    width: 90vw;
+}
+
+.task-search{
+    justify-content: first baseline;
+    display: flex;
+}
+.tab {
+    color: white;
+    justify-content: space-between;
+    border-radius: 4px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.tab-internet{
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+    padding: 8px;
+
+}
+
+.tab button {
+    width: 34px;
+    height: 34px;
+    background-color: red;
+    border: white solid 2px;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Valid font-weight */
+    text-align: center;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.tab .box {
+    width: 30px;
+    height: 30px;
+    border: white solid 2px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Valid font-weight */
+    text-align: center;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 2px;
+}
+
+.dual{
+    display: flex;
+    height: 90vh;
+}
+
+.paragraph{
+    width: 300px;
+    background-color: white;
+}
+
+.game{
+    width: 90vw;
+    height: 60vh;
+    background-color: white;
+}
+
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.loading-bar {
+    width: 80%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: rgb(0, 0, 0);
+    animation: loading 3s linear forwards;
+}
+
+/* Animation for Progress Bar */
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Game Content Styling */
+.game-content {
+    font-family: "Pixelify Sans", sans-serif;
+    color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.tv{
+    width: 60vw;
+    height: 40vh;
+    background-color: black;
 }
