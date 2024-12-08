@@ -70,6 +70,19 @@ body {
     overflow: hidden;
     border-radius: 10px;
   }
+
+  .instructions{
+    display: flex;
+    gap: 10px;
+  }
+
+  .placeholder{
+    width: 300px;
+    height: 400px;
+    border: #3e3e3e 1px solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
   
   #spinnerWrapper {
     position: relative;
@@ -96,6 +109,7 @@ body {
   .color-row button{
     width: 300px;
     height: 100px;
+    border-radius: 5px;
   }
 
   .color-row{
