@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette Game</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <!-- Welcome Page -->
+  <section id="welcome" class="flow active">
+    <h1>Welcome to Roulette</h1>
+    <button id="startButton">Let's start →</button>
+  </section>
+
+  <!-- How to Play -->
+  <section id="howToPlay" class="flow">
+    <h1>How to play</h1>
+    <div class="instructions">
+      <div class="placeholder">Image 1</div>
+      <div class="placeholder">Image 2</div>
+      <div class="placeholder">Image 3</div>
+    </div>
+    <button id="betButton">Let's Bet →</button>
+  </section>
+
+  <!-- Betting Screen -->
+  <section id="betScreen" class="flow">
+    <h1>Place your bet</h1>
+    
+    <!-- Spinner Wrapper with White Bar -->
+    <div id="spinnerWrapper">
+      <div id="whiteBar"></div> <!-- The white bar in the center -->
+      <div id="spinnerTrack"></div> <!-- The spinning numbers -->
+    </div>
+    
+    <div id="errorMessage" class="error-message"></div>
+
+    <div id="betOptions">
+
+        <div class="color-row">
+        <button data-type="color" data-bet="red" class="red-color">Red</button>
+        <button data-type="color" data-bet="green" class="green-color">0 (Green)</button>
+        <button data-type="color" data-bet="black" class="black-color">Black</button>
+    </div>
+    </div>      
+    <button id="spinButton">Spin →</button>
+  </section>
+
+  <!-- Result Overlay -->
+  <div id="resultOverlay">
+    <div id="resultBox">
+      <h2 id="resultMessage"></h2>
+      <p>It landed on <span id="resultNumber"></span></p>
+      <button id="continueButton">Continue →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
